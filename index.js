@@ -167,6 +167,11 @@ async function create(vm) {
     },
     {
       op: "add",
+      path: "/fields/Custom.Objective",
+      value: html
+    },
+    {
+      op: "add",
       path: "/fields/System.Tags",
       value: "GitHub Issue; " + vm.repo_name
     },
@@ -286,7 +291,7 @@ async function update(vm, workItem) {
     });
   }
 
-  if (workItem.fields["System.Description"] != html || workItem.fields["Microsoft.VSTS.TCM.ReproSteps"] != html ) {
+  if (workItem.fields["System.Description"] != html || workItem.fields["Microsoft.VSTS.TCM.ReproSteps"] != html || workItem.fields["Custom.Objective"] != html) {
     patchDocument.push(
       {
         op: "add",
@@ -296,6 +301,11 @@ async function update(vm, workItem) {
       {
         op: "add",
         path: "/fields/Microsoft.VSTS.TCM.ReproSteps",
+        value: html,
+      },
+      {
+        op: "add",
+        path: "/fields/Custom.Objective",
         value: html,
       }
     );
