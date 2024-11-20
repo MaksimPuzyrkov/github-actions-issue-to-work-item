@@ -38,8 +38,8 @@ async function main() {
 
     // verbose logging
     if (vm.env.logLevel >= 300) {
-      console.log("Print context:");
-      console.log(context);
+      console.log("Print github:");
+      console.log(github);
     }
 
     // if the sender in the azure-boards bot, then exit code
