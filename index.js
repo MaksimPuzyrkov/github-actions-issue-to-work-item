@@ -36,6 +36,12 @@ async function main() {
       vm = getValuesFromPayload(github.context.payload, env);
     }    
 
+    // verbose logging
+    if (vm.env.logLevel >= 300) {
+      console.log("Print context:");
+      console.log(context);
+    }
+
     // if the sender in the azure-boards bot, then exit code
     // nothing needs to be done
     if (vm.sender_login === "azure-boards[bot]") {
