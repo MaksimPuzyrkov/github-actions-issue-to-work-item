@@ -704,6 +704,9 @@ function getValuesFromPayload(payload, env) {
   if (vm.env.logLevel >= 300) {
     console.log("Print vm:");
     console.log(vm);
+
+    console.log("Print payload:");
+    console.log(payload);
   }
 
   return vm;
